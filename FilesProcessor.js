@@ -13,6 +13,12 @@ class FilesProcessor {
                 let resFiles = [];
                 let readyParts = 0;
 
+                res.forEach((item) => {
+                    item.sort((a, b) => {
+                        return a.name > b.name ? 1 : -1
+                    })
+                })
+
                 for(let data of res) {
                     new TextureRenderer(data, options, (renderResult) => {
                         packResult.push({
